@@ -173,3 +173,32 @@ cd aut-driver
 
 ### 运行演示
 
+
+aut-driver/                     ← 你的项目总文件夹
+├── README.md                   ← 项目说明文档（我们一直在写的内容）
+├── LICENSE                     ← 开源协议文件（推荐MIT）
+├── images/                     ← 存放所有图片、动图
+│   ├── car_photo.jpg           ← 小车实物照片
+│   ├── architecture.png        ← 系统架构图
+│   └── demo.gif                ← 运行演示动图
+├── docs/                       ← 存放详细文档
+│   ├── 环境搭建指南.md
+│   ├── 烧录指南.md
+│   └── 引脚连接图.pdf
+└── src/                        ← 存放所有源代码
+    ├── drivers/                ← 外设驱动层 (GPIO, PWM, UART, ADC, IIC)
+    │   ├── gpio.c / gpio.h
+    │   ├── pwm.c / pwm.h
+    │   └── ...
+    ├── sensors/                ← 传感器采集模块 (OLED, 温湿度, 光照等)
+    │   ├── oled.c / oled.h
+    │   ├── aht20.c / aht20.h   ← 温湿度
+    │   └── ...
+    ├── motor/                  ← 电机控制模块 (含PID闭环)
+    │   ├── motor.c / motor.h
+    │   └── pid.c / pid.h
+    ├── cloud/                  ← 华为云物联网交互 (Wi-Fi, MQTT, JSON)
+    │   ├── wifi.c / wifi.h
+    │   ├── mqtt.c / mqtt.h
+    │   └── ...
+    └── main.c / main.h         ← 主程序入口
