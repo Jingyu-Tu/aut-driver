@@ -187,20 +187,4 @@ aut-driver/                     ← 项目根目录
 │   ├── 每日笔记.md
 │   └── 引脚连接图.pdf
 └── src/                        ← 存放所有源代码
-    ├── drivers/                ← 外设驱动层 (GPIO, PWM, UART, ADC, IIC)
-    │   ├── gpio.c / gpio.h
-    │   ├── pwm.c / pwm.h
-    │   └── ...
-    ├── sensors/                ← 传感器采集模块 (OLED, 温湿度, 光照等)
-    │   ├── oled.c / oled.h
-    │   ├── aht20.c / aht20.h   ← 温湿度
-    │   └── ...
-    ├── motor/                  ← 电机控制模块 (含PID闭环)
-    │   ├── motor.c / motor.h
-    │   └── pid.c / pid.h
-    ├── cloud/                  ← 华为云物联网交互 (Wi-Fi, MQTT, JSON)
-    │   ├── wifi.c / wifi.h
-    │   ├── mqtt.c / mqtt.h
-    │   └── ...
-    └── main.c / main.h         ← 主程序入口
 ```
