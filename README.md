@@ -182,7 +182,7 @@ aut-driver/                     ← 项目根目录
 ├── README.md                   ← 项目说明文档
 ├── images/                     ← 存放所有图片、动图
 │   ├── car_photo           ← 小车实物照片
-│   └── architecture             
+│   └── Progress screenshots             
 ├── docs/                       ← 存放文档
 │   ├── 每日笔记.txt
 │   └── 引脚连接图.pdf
