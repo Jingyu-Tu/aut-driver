@@ -184,7 +184,7 @@ aut-driver/                     ← 项目根目录
 │   ├── car_photo           ← 小车实物照片
 │   └── Progress screenshots             
 ├── docs/                       ← 存放文档
-│   ├── 每日笔记.txt
+│   ├── 每日笔记.md
 │   └── 引脚连接图.pdf
 └── src/                        ← 存放所有源代码
     ├── drivers/                ← 外设驱动层 (GPIO, PWM, UART, ADC, IIC)
