@@ -173,10 +173,14 @@ cd aut-driver
 
 ### 运行演示
 
+## 📁 项目目录结构
 
-aut-driver/                     ← 你的项目总文件夹
-├── README.md                   ← 项目说明文档（我们一直在写的内容）
-├── LICENSE                     ← 开源协议文件（推荐MIT）
+项目的主要文件和文件夹组织如下：
+
+```plaintext
+aut-driver/                     ← 项目根目录
+├── README.md                   ← 项目说明文档
+├── LICENSE                     ← 开源协议文件（MIT）
 ├── images/                     ← 存放所有图片、动图
 │   ├── car_photo.jpg           ← 小车实物照片
 │   ├── architecture.png        ← 系统架构图
@@ -202,3 +206,4 @@ aut-driver/                     ← 你的项目总文件夹
     │   ├── mqtt.c / mqtt.h
     │   └── ...
     └── main.c / main.h         ← 主程序入口
+```
