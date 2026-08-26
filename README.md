@@ -156,7 +156,9 @@
 | **CH341SER** | 最新版 | USB转串口驱动，用于电脑识别串口设备（如Hi3861开发板、蓝牙模块等） |
 
 ### 克隆本项目
+
 git clone https://github.com/Jingyu-Tu/aut-driver.git
+
 cd aut-driver
 
 
