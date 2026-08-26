@@ -180,14 +180,12 @@ cd aut-driver
 ```plaintext
 aut-driver/                     ← 项目根目录
 ├── README.md                   ← 项目说明文档
-├── LICENSE                     ← 开源协议文件（MIT）
 ├── images/                     ← 存放所有图片、动图
 │   ├── car_photo.jpg           ← 小车实物照片
 │   ├── architecture.png        ← 系统架构图
 │   └── demo.gif                ← 运行演示动图
-├── docs/                       ← 存放详细文档
-│   ├── 环境搭建指南.md
-│   ├── 烧录指南.md
+├── docs/                       ← 存放文档
+│   ├── 每日笔记.txt
 │   └── 引脚连接图.pdf
 └── src/                        ← 存放所有源代码
     ├── drivers/                ← 外设驱动层 (GPIO, PWM, UART, ADC, IIC)
