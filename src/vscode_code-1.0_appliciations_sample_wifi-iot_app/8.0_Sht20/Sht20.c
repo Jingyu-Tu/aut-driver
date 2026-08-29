@@ -1,0 +1,95 @@
+#include <stdio.h>
+#include <unistd.h>
+#include "ohos_init.h"
+#include "cmsis_os2.h"
+#include "hal_bsp_sht20.h"
+
+osSemaphoreId_t sem1;
+
+// 线程1：释放信号量
+void thread1(void)
+{
+    while (1)
+    {
+        // 1秒中释放两次sem1信号量，使得Thread2和Thread3能同步执行
+        osSemaphoreRelease(sem1);
+        osSemaphoreRelease(sem1);
+        printf("\n");
+        printf("Thread1 释放信号量!\n");
+        osDelay(300);  // 延时3秒
+    }
+}
+
+// 线程2：读取温湿度
+void thread2(void)
+{
+    float temperature = 0, humidity = 0;
+    printf("i2c_sht20_demo()!\n");
+    SHT20_Init();  // SHT20 初始化
+
+    while (1)
+    {
+        // 等待 sem1 信号量
+        osSemaphoreAcquire(sem1, osWaitForever);
+        SHT20_ReadData(&temperature, &humidity);
+        printf("temperature = %.2f   humidity = %.2f\r\n", temperature, humidity);
+        printf("Thread2 得到信号量!\n");
+        osDelay(1);  // 延时10ms
+    }
+}
+
+// 线程3：读取温湿度
+void thread3(void)
+{
+   
+
+    while (1)
+    {
+        // 等待 sem1 信号量
+        osSemaphoreAcquire(sem1, osWaitForever);
+        printf("Thread3 得到信号量!\n");
+        osDelay(1);  // 延时10ms
+    }
+}
+
+// 任务创建
+static void i2c_sht20_demo(void)
+{
+    osThreadAttr_t attr;
+    attr.attr_bits = 0U;
+    attr.cb_mem = NULL;
+    attr.cb_size = 0U;
+    attr.stack_mem = NULL;
+    attr.stack_size = 1024 * 4;
+
+    attr.name = "thread1";
+    attr.priority = 25;
+    if (osThreadNew((osThreadFunc_t)thread1, NULL, &attr) == NULL)
+    {
+        printf("Failed to create thread1!\n");
+    }
+
+    attr.name = "thread2";
+    attr.priority = 25;
+    if (osThreadNew((osThreadFunc_t)thread2, NULL, &attr) == NULL)
+    {
+        printf("Failed to create thread2!\n");
+    }
+
+    attr.name = "thread3";
+    attr.priority = 25;
+    if (osThreadNew((osThreadFunc_t)thread3, NULL, &attr) == NULL)
+    {
+        printf("Failed to create thread3!\n");
+    }
+
+    // 创建信号量，初始值为0，最大值为4
+    sem1 = osSemaphoreNew(4, 0, NULL);
+    if (sem1 == NULL)
+    {
+        printf("Failed to create Semaphore1!\n");
+    }
+}
+
+// 启动任务（添加在整个文件的最末尾）
+APP_FEATURE_INIT(i2c_sht20_demo);
