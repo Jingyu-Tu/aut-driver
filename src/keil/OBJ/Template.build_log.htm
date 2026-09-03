@@ -21,24 +21,36 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.1.0
 Dialog DLL:      TCM.DLL V1.35.1.0
  
 <h2>Project:</h2>
-D:\2026summer\MDK\2_串口收发打印\2_串口收发打印\USER\Template.uvprojx
-Project File Date:  08/26/2026
+D:\2026summer\MDK\2_串口收发打印\3_超声波避障\USER\Template.uvprojx
+Project File Date:  09/03/2026
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\2026summer\MDK\MDK\ARM\ARMCC\Bin'
 Build target 'Template'
+compiling soft_uart_rx.c...
+soft_uart_rx.h(11): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\SYSTEM\delay\delay.h(10): warning:  #1-D: last line of file ends without a newline
+  #endif
+soft_uart_rx.c(69): warning:  #1-D: last line of file ends without a newline
+  }
+soft_uart_rx.c: 3 warnings, 0 errors
 compiling main.c...
 ..\SYSTEM\delay\delay.h(10): warning:  #1-D: last line of file ends without a newline
   #endif
 motor.h(16): warning:  #1-D: last line of file ends without a newline
   #endif
-main.c(25): warning:  #1-D: last line of file ends without a newline
+soft_uart_rx.h(11): warning:  #1-D: last line of file ends without a newline
+  #endif
+main.c(54): warning:  #223-D: function "Control_Stop" declared implicitly
+      Control_Stop();
+main.c(64): warning:  #1-D: last line of file ends without a newline
   }
-main.c: 3 warnings, 0 errors
+main.c: 5 warnings, 0 errors
 linking...
-Program Size: Code=3236 RO-data=336 RW-data=52 ZI-data=812  
+Program Size: Code=4004 RO-data=336 RW-data=56 ZI-data=608  
 FromELF: creating hex file...
-"..\OBJ\Template.axf" - 0 Error(s), 3 Warning(s).
+"..\OBJ\Template.axf" - 0 Error(s), 8 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -52,7 +64,7 @@ Package Vendor: Keil
   D:\2026summer\MDK\MDK\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>
