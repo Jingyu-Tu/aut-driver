@@ -1,0 +1,14 @@
+import("//build/lite/config/component/lite_component.gni")
+
+static_library("Auto_Navigation_lib") {
+    sources = [ "Auto_Navigation.c" ]
+    include_dirs = [
+        "//utils/native/lite/include",
+        "//kernel/liteos_m/components/cmsis/2.0",
+        "//base/iot_hardware/interfaces/kits/wifiiot_lite",
+    ]
+}
+
+lite_component("Auto_Navigation") {
+    features = [ ":Auto_Navigation_lib" ]
+}
